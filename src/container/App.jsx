@@ -31,13 +31,13 @@ const App = () => {
 
   const setPersonImage = (item, url) => {
     let showPictureClone = {...showPicture}
-    showPicture[item] = url
+    showPictureClone[item] = url
     setShowPicture(showPictureClone)
   }
 
   return (
     <Body>
-      <SelectorView images={images}/>
+      <SelectorView images={images} setPersonImage={setPersonImage} />
       <EditorView showPicture={showPicture} />
     </Body >
   )

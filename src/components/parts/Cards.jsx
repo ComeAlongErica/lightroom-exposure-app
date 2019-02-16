@@ -52,7 +52,7 @@ margin: 0 10px 8px 10px;
 `
 
 const Cards = (props) => {
-  const { title, theme, description, changeDisplay, item, images, value } = props
+  const { title, theme, description, changeDisplay, item, images, value, setPersonImage } = props
   return (
     <Card>
       {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
@@ -62,7 +62,7 @@ const Cards = (props) => {
             <i className="fas fa-long-arrow-alt-right"></i>
           </div>
         </div>}
-        {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} />}
+        {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} setPersonImage={setPersonImage} />}
     </Card >
   )
 }

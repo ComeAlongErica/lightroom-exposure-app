@@ -57,13 +57,12 @@ margin: 15px 20px 10px 20px;
 `
 
 const SelectorView = props => {
-  const { images } = props
+  const { images, setPersonImage } = props
   const [portraitSection, setPortraitSection] = useState(false);
   const [structureSection, setStructureSection] = useState(false);
   const [lightSection, setLightSection] = useState(false);
 
   const toggleSectionDisplay = (item) => {
-    console.log(item)
     if (item === 'portraitSection') {
       setPortraitSection(!portraitSection)
       setStructureSection(false)
@@ -122,7 +121,8 @@ const SelectorView = props => {
             item={selector.item}
             changeDisplay={toggleSectionDisplay} 
             images={selector.images} 
-            value={selector.value} />
+            value={selector.value}
+            setPersonImage={setPersonImage} />
         ))}
       </div>
     </SelectorContainer >

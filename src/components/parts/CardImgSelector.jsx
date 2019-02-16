@@ -37,15 +37,13 @@ const StyledImg = styled.img`
 
 
 const CardImgSelector = (props) => {
-  const { images, changeDisplay, item } = props
-  console.log(images)
-
+  const { images, changeDisplay, item, setPersonImage } = props
   return (
-    <ImgSelector>
+    <ImgSelector className={'imgSelector'} >
       <i className="fas fa-long-arrow-alt-left" onClick={() => changeDisplay(item)}></i>
       {images.map((img, index) => (
         <Fragment key={index}>
-          <StyledImg src={img} />
+          <StyledImg src={img} onClick={() => setPersonImage(item, img)} />
         </Fragment>
       ))}
     </ImgSelector>
