@@ -9,7 +9,8 @@ height: 95vh;
 margin: 15px;
 `
 const SingleImg = styled.img`
-  width: 90%;
+  width: 70%;
+  max-width: 600px;
   height: auto;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: transform .5s ease-out;
@@ -17,14 +18,7 @@ const SingleImg = styled.img`
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
 `
-const DoubleExposure = styled.img`
-  width: 90%;
-  height: auto;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-  transition: transform .5s ease-out;
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
+const DoubleExposure = styled(SingleImg)`
   mix-blend-mode: screen;
 `
 

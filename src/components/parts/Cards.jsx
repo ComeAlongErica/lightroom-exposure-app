@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import CardImgSelector from './CardImgSelector'
 
 const Card = styled.div`
+min-width: 400px;
 height: 30%;
 display: flex;
 flex-direction: column;
@@ -47,7 +48,7 @@ background: ${props => props.theme.main};
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-size: 35px;
+font-size: 40px;
 margin: 0 10px 8px 10px;
 `
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styled from 'styled-components'
 
 import Cards from './parts/Cards'
@@ -9,8 +9,8 @@ display: flex;
 flex-direction: column;
 background-color: #1d0c26;
 height: 95vh;
-width: 30vw;
-margin: 15px;
+min-width: 65px;
+margin: 0px;
 .cardContainer {
   flex-grow: 1;
   display: flex;
@@ -58,10 +58,12 @@ margin: 15px 20px 10px 20px;
 
 const SelectorView = props => {
   const { images, setPersonImage } = props
+  const [closeSelector, setCloseSelector] = useState(false);
   const [portraitSection, setPortraitSection] = useState(false);
   const [structureSection, setStructureSection] = useState(false);
   const [lightSection, setLightSection] = useState(false);
 
+  const toggleCloseSelector = () => setCloseSelector(!closeSelector)
   const toggleSectionDisplay = (item) => {
     if (item === 'portraitSection') {
       setPortraitSection(!portraitSection)
@@ -85,7 +87,7 @@ const SelectorView = props => {
       title: 'Choose a Portrait',
       theme: 'linear-gradient(to right, #f750a2, #ff7c7e, #ff7c7e)',
       description: 'Select the main portrait to edit',
-      item: 'portraitSection', 
+      item: 'portraitSection',
       value: portraitSection,
       images: images.person
     },
@@ -93,7 +95,7 @@ const SelectorView = props => {
       title: 'Provide Atmosphere',
       theme: 'linear-gradient(to right, #fcde8a, #ff8f89, #ff8f89, #ff8f89)',
       description: 'Give the image depth',
-      item: 'structureSection', 
+      item: 'structureSection',
       value: structureSection,
       images: images.structure
     },
@@ -101,7 +103,7 @@ const SelectorView = props => {
       title: 'Add the Magic',
       theme: 'linear-gradient(to right, #42e697, #3cbabb, #3cbabb)',
       description: 'Finish with a splash of fun',
-      item: 'lightSection', 
+      item: 'lightSection',
       value: lightSection,
       images: images.texture
     }
@@ -109,22 +111,24 @@ const SelectorView = props => {
 
   return (
     <SelectorContainer>
-      <CloseX />
-      <Title>Build</Title>
-      <div className={'cardContainer'}>
-        {editorCards.map((selector, index) => (
-          <Cards
-            key={index}
-            theme={{ main: selector.theme }}
-            title={selector.title}
-            description={selector.description}
-            item={selector.item}
-            changeDisplay={toggleSectionDisplay} 
-            images={selector.images} 
-            value={selector.value}
-            setPersonImage={setPersonImage} />
-        ))}
-      </div>
+      <CloseX onClick={() => toggleCloseSelector()} />
+      {!closeSelector && <Fragment>
+        <Title>Editor</Title>
+        <div className={'cardContainer'}>
+          {editorCards.map((selector, index) => (
+            <Cards
+              key={index}
+              theme={{ main: selector.theme }}
+              title={selector.title}
+              description={selector.description}
+              item={selector.item}
+              changeDisplay={toggleSectionDisplay}
+              images={selector.images}
+              value={selector.value}
+              setPersonImage={setPersonImage} />
+          ))}
+        </div></Fragment>
+      }
     </SelectorContainer >
   )
 }
