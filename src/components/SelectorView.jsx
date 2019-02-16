@@ -5,6 +5,16 @@ import person1 from '../images/people/blue-person.jpg'
 import person2 from '../images/people/red-person.jpg'
 import person3 from '../images/people/silo-person.jpg'
 
+import structure1 from '../images/structure/branches.jpg'
+import structure2 from '../images/structure/building.jpg'
+import structure3 from '../images/structure/twiggy.jpg'
+
+import texture1 from '../images/texture/colorful.jpg'
+import texture2 from '../images/texture/lightstreak.jpg'
+import texture3 from '../images/texture/sparkle.jpg'
+
+
+
 
 
 import Cards from './parts/Cards'
@@ -101,7 +111,7 @@ const SelectorView = () => {
       description: 'Give the image depth',
       item: 'structureSection', 
       value: structureSection,
-      images: []
+      images: [structure1, structure2, structure3]
     },
     {
       title: 'Add the Magic',
@@ -109,7 +119,7 @@ const SelectorView = () => {
       description: 'Finish with a splash of fun',
       item: 'lightSection', 
       value: lightSection,
-      images: []
+      images: [texture1, texture2, texture3]
     }
   ]
 
