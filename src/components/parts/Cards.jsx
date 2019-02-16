@@ -29,10 +29,11 @@ margin: 0 10px;
 `
 
 const Cards = (props) => {
+  const { title, theme, description } = props
   return (
     <CardsContainer>
-      <CardTitle theme={props.theme}>Select Item Name Here</CardTitle>
-      <p>Description goes here</p>
+      <CardTitle theme={theme}>{title}</CardTitle>
+      <p>{description}</p>
     </CardsContainer >
   )
 }

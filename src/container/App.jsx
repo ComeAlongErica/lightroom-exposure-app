@@ -17,8 +17,6 @@ width: 100vw;
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
-
   return (
     <Body>
       <SelectorView />
