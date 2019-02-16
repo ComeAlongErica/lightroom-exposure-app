@@ -29,24 +29,10 @@ const CloseX = styled.div`
   width: 32px;
   height: 32px;
   opacity: 0.3;
-  transition: 0.8s ease-in-out;
+  transition: 0.5s ease-out;
 :hover {
   cursor: pointer;
   opacity: 1;
-  :before {
-    transform: rotate(90deg);
-  }
-  :after {
-    background-color: transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid white;
-    transform: rotate(0deg);
-    left: -3px;;
-    top: 6px;
-    width: 0;
-    height: 0;
-  }
 }
 :before, :after {
   position: absolute;

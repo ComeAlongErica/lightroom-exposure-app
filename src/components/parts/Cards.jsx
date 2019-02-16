@@ -27,7 +27,7 @@ i.fa-long-arrow-alt-right {
   transition: transform .5s ease-out;
 }
 :hover .fa-long-arrow-alt-right {
-    transform: translateX(10px) scale(1.5);
+    transform: translateX(10px) scale(1.2);
   }
 `
 
