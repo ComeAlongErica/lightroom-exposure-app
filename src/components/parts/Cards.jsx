@@ -16,10 +16,19 @@ transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .description {
+  display: inline;
   font-size: 18px;
   margin: 10px;
   color: #9f9ba8;
 }
+i.fa-long-arrow-alt-right {
+  color: #9f9ba8;
+  font-size: 16px;
+  transition: transform .5s ease-out;
+}
+:hover .fa-long-arrow-alt-right {
+    transform: translateX(10px) scale(1.5);
+  }
 `
 
 const CardTitle = styled.h2`
@@ -36,7 +45,10 @@ const Cards = (props) => {
   return (
     <Card>
       <CardTitle theme={theme}>{title}</CardTitle>
+      <div>
       <p className={'description'}>{description}</p>
+      <i class="fas fa-long-arrow-alt-right"></i>
+      </div>
     </Card >
   )
 }
