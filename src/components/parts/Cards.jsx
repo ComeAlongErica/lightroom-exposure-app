@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
+import CardImgSelector from './CardImgSelector'
+
 const Card = styled.div`
 height: 30%;
 display: flex;
@@ -12,9 +14,16 @@ border-radius: 10px;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 :hover {
-  cursor: pointer;
   transform: scale(1.05);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  .cardFront {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 .description {
   display: inline;
@@ -35,23 +44,25 @@ i.fa-long-arrow-alt-right {
 const CardTitle = styled.h2`
 background: linear-gradient(to right, #f750a2 0%, #ff7c7e 100%);
 background: ${props => props.theme.main};
+background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-size: 40px;
-margin: 0 10px;
+font-size: 35px;
+margin: 0 10px 8px 10px;
 `
 
 const Cards = (props) => {
-  const { title, theme, description, changeDisplay, item } = props
+  const { title, theme, description, changeDisplay, item, images } = props
   return (
-    <Card onClick={() => changeDisplay(item)}>
-      {!item && <div>
+    <Card>
+      {!item && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
         <CardTitle theme={theme}>{title}</CardTitle>
           <div>
             <p className={'description'}>{description}</p>
-            <i class="fas fa-long-arrow-alt-right"></i>
+            <i className="fas fa-long-arrow-alt-right"></i>
           </div>
         </div>}
+        {item && <CardImgSelector images={images} />}
     </Card >
   )
 }

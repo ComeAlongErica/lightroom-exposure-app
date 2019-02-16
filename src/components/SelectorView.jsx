@@ -76,19 +76,22 @@ const SelectorView = () => {
       title: 'Choose a Portrait',
       theme: 'linear-gradient(to right, #f750a2, #ff7c7e, #ff7c7e)',
       description: 'Select the main portrait to edit',
-      item: portraitSection
+      item: portraitSection, 
+      images: ['../../images/people/blue-person.jpg', 'src/images/people/red-person.jpg', 'src/images/people/silo-person.jpg']
     },
     {
       title: 'Provide Atmosphere',
       theme: 'linear-gradient(to right, #fcde8a, #ff8f89, #ff8f89, #ff8f89)',
       description: 'Give the image depth',
-      item: structureSection
+      item: structureSection, 
+      images: []
     },
     {
       title: 'Add the Magic',
       theme: 'linear-gradient(to right, #42e697, #3cbabb, #3cbabb)',
       description: 'Finish with a splash of fun',
-      item: lightSection
+      item: lightSection, 
+      images: []
     }
   ]
 
@@ -104,7 +107,8 @@ const SelectorView = () => {
             title={selector.title}
             description={selector.description}
             item={selector.item}
-            changeDisplay={toggleSectionDisplay} />
+            changeDisplay={toggleSectionDisplay} 
+            images={selector.images} />
         ))}
       </div>
     </SelectorContainer >
