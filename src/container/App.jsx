@@ -26,7 +26,7 @@ width: 100vw;
 `
 
 const App = () => {
-  const [showPicture, setShowPicture] = useState({portraitSection: person1, structureSection: structure2, lightSection: texture1});
+  const [showPicture, setShowPicture] = useState({portraitSection: '', structureSection: '', lightSection: ''});
   const images = { person: [person1, person2, person3], structure: [structure1, structure2, structure3], texture: [texture1, texture2, texture3] }
 
   const setPersonImage = (item, url) => {
