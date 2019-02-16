@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
+import person1 from '../images/people/blue-person.jpg'
+import person2 from '../images/people/red-person.jpg'
+import person3 from '../images/people/silo-person.jpg'
+
+
+
 import Cards from './parts/Cards'
 
 const SelectorContainer = styled.div`
@@ -79,7 +85,7 @@ const SelectorView = () => {
       description: 'Select the main portrait to edit',
       item: 'portraitSection', 
       value: portraitSection,
-      images: ['../../images/people/blue-person.jpg', 'src/images/people/red-person.jpg', 'src/images/people/silo-person.jpg']
+      images: [person1, person2, person3]
     },
     {
       title: 'Provide Atmosphere',

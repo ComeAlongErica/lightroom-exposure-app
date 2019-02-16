@@ -23,8 +23,16 @@ i.fa-long-arrow-alt-left {
 
 `
 const StyledImg = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  transition: transform .5s ease-out;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  }
 `
 
 
@@ -38,7 +46,7 @@ const CardImgSelector = (props) => {
       <i className="fas fa-long-arrow-alt-left" onClick={() => changeDisplay(item)}></i>
       {images.map((img, index) => (
         <Fragment key={index}>
-          <StyledImg src={require('../../images/people/blue-person.jpg')} />
+          <StyledImg src={img} />
         </Fragment>
       ))}
     </ImgSelector>
