@@ -17,25 +17,11 @@ width: 30vw;
 margin: 15px;
 .cardContainer {
   flex-grow: 1;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
-  align-content: stretch;
   padding: 10px;
   height: 100%;
-}
-.fa-times {
-  font-size: 35px;
-  color: white;
-  margin: 20px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  :hover {
-    cursor: pointer;
-  }
 }
 `
 
@@ -47,8 +33,24 @@ const CloseX = styled.div`
   width: 32px;
   height: 32px;
   opacity: 0.3;
+  transition: 0.8s ease-in-out;
 :hover {
+  cursor: pointer;
   opacity: 1;
+  :before {
+    transform: rotate(90deg);
+  }
+  :after {
+    background-color: transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    transform: rotate(0deg);
+    left: -3px;;
+    top: 6px;
+    width: 0;
+    height: 0;
+  }
 }
 :before, :after {
   position: absolute;
@@ -67,7 +69,7 @@ const CloseX = styled.div`
 `
 
 const Title = styled.h1`
-font-size: 40px;
+font-size: 36px;
 color: white;
 margin: 15px 20px 10px 20px;
 `
@@ -91,7 +93,7 @@ const SelectorView = () => {
     {
       title: 'Add the Magic',
       theme: 'linear-gradient(to right, #42e697, #3cbabb, #3cbabb)',
-      description: 'This is where you add the splash of fun'
+      description: 'Finish with a splash of fun'
     }
   ]
 

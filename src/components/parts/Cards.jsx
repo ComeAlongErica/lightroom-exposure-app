@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const CardsContainer = styled.div`
-flex-grow: 1;
+const Card = styled.div`
+height: 30%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 background-image: linear-gradient(-240deg, #332d49, #311439);
 margin: 10px;
 border-radius: 10px;
@@ -12,7 +15,7 @@ transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   transform: scale(1.05);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-p {
+.description {
   font-size: 18px;
   margin: 10px;
   color: #9f9ba8;
@@ -31,10 +34,10 @@ margin: 0 10px;
 const Cards = (props) => {
   const { title, theme, description } = props
   return (
-    <CardsContainer>
+    <Card>
       <CardTitle theme={theme}>{title}</CardTitle>
-      <p>{description}</p>
-    </CardsContainer >
+      <p className={'description'}>{description}</p>
+    </Card >
   )
 }
 
