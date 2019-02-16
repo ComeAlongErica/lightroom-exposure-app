@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import Cards from './parts/Cards'
 
+const theme = {
+  main: 'linear-gradient(to right, #f750a2 0%, #ff7c7e 100%)'
+};
+
 const SelectorContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -34,9 +38,9 @@ const SelectorView = () => {
     <SelectorContainer>
       <Title>Build</Title>
       <div>
-        <Cards />
-        <Cards />
-        <Cards />
+        <Cards theme={{ main: "linear-gradient(to right, #f750a2 0%, #ff7c7e 100%)" }}/>
+        <Cards theme={{ main: "linear-gradient(to right, #fcde8a 0%, #ff8f89 100%)" }}/>
+        <Cards theme={{ main: "linear-gradient(to right, #42e697 0%, #3cbabb 100%)" }}/>
       </div>
     </SelectorContainer >
   )
