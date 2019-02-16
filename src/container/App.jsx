@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
-import Portrait from '../components/Portrait'
+import SelectorView from '../components/SelectorView'
 import EditorView from '../components/EditorView'
 
 
 const Body = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
-background-color: #312037;
+background-color: #25132f;
 height: 100vh;
 width: 100vw;
 `
 
+
 const App = () => {
+
+  const [count, setCount] = useState(0);
+
   return (
     <Body>
-      <Portrait />
+      <SelectorView />
       <EditorView />
     </Body >
   )

@@ -7,7 +7,7 @@ height: 80vh;
 width: 35vw;
 `
 
-const App = () => {
+const Portrait = () => {
   return(
       <PortraitContainer>
 
@@ -15,4 +15,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default Portrait;
