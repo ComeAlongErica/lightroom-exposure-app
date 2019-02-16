@@ -20,7 +20,6 @@ i.fa-long-arrow-alt-left {
     cursor: pointer;
   }
 }
-
 `
 const StyledImg = styled.img`
   width: 115px;
