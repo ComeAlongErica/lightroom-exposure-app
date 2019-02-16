@@ -3,10 +3,6 @@ import styled from 'styled-components'
 
 import Cards from './parts/Cards'
 
-const theme = {
-  main: 'linear-gradient(to right, #f750a2 0%, #ff7c7e 100%)'
-};
-
 const SelectorContainer = styled.div`
 position: relative;
 display: flex;
@@ -75,9 +71,9 @@ margin: 15px 20px 10px 20px;
 `
 
 const SelectorView = () => {
-  const [portraitSection, setPortraitSection] = useState(false);
-  const [lightSection, setLightSection] = useState(false);
-  const [structureSection, setStructureSection] = useState(false);
+  // const [portraitSection, setPortraitSection] = useState(false);
+  // const [lightSection, setLightSection] = useState(false);
+  // const [structureSection, setStructureSection] = useState(false);
 
   const editorCards = [
     {
