@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
 const Card = styled.div`
@@ -42,14 +42,16 @@ margin: 0 10px;
 `
 
 const Cards = (props) => {
-  const { title, theme, description } = props
+  const { title, theme, description, changeDisplay, item } = props
   return (
-    <Card>
-      <CardTitle theme={theme}>{title}</CardTitle>
-      <div>
-      <p className={'description'}>{description}</p>
-      <i class="fas fa-long-arrow-alt-right"></i>
-      </div>
+    <Card onClick={() => changeDisplay(item)}>
+      {!item && <div>
+        <CardTitle theme={theme}>{title}</CardTitle>
+          <div>
+            <p className={'description'}>{description}</p>
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </div>
+        </div>}
     </Card >
   )
 }

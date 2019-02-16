@@ -57,25 +57,38 @@ margin: 15px 20px 10px 20px;
 `
 
 const SelectorView = () => {
-  // const [portraitSection, setPortraitSection] = useState(false);
-  // const [lightSection, setLightSection] = useState(false);
-  // const [structureSection, setStructureSection] = useState(false);
+  const [portraitSection, setPortraitSection] = useState(false);
+  const [structureSection, setStructureSection] = useState(false);
+  const [lightSection, setLightSection] = useState(false);
+
+  const toggleSectionDisplay = (item) => {
+    if (item === portraitSection) {
+      setPortraitSection(!portraitSection)
+    } else if (item === structureSection) {
+      setStructureSection(!structureSection)
+    } else if (item === lightSection) {
+      setLightSection(!lightSection)
+    }
+  }
 
   const editorCards = [
     {
       title: 'Choose a Portrait',
       theme: 'linear-gradient(to right, #f750a2, #ff7c7e, #ff7c7e)',
-      description: 'Select the main portrait to edit'
+      description: 'Select the main portrait to edit',
+      item: portraitSection
     },
     {
       title: 'Provide Atmosphere',
       theme: 'linear-gradient(to right, #fcde8a, #ff8f89, #ff8f89, #ff8f89)',
-      description: 'Give the image depth'
+      description: 'Give the image depth',
+      item: structureSection
     },
     {
       title: 'Add the Magic',
       theme: 'linear-gradient(to right, #42e697, #3cbabb, #3cbabb)',
-      description: 'Finish with a splash of fun'
+      description: 'Finish with a splash of fun',
+      item: lightSection
     }
   ]
 
@@ -84,8 +97,14 @@ const SelectorView = () => {
       <CloseX />
       <Title>Build</Title>
       <div className={'cardContainer'}>
-        {editorCards.map(selector => (
-          <Cards theme={{ main: selector.theme }} title={selector.title} description={selector.description} />
+        {editorCards.map((selector, index) => (
+          <Cards
+            key={index}
+            theme={{ main: selector.theme }}
+            title={selector.title}
+            description={selector.description}
+            item={selector.item}
+            changeDisplay={toggleSectionDisplay} />
         ))}
       </div>
     </SelectorContainer >
