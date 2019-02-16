@@ -71,9 +71,17 @@ const SelectorView = () => {
     console.log(item)
     if (item === 'portraitSection') {
       setPortraitSection(!portraitSection)
+      setStructureSection(false)
+      setLightSection(false)
+
     } else if (item === 'structureSection') {
+      setPortraitSection(false)
       setStructureSection(!structureSection)
+      setLightSection(false)
+
     } else if (item === 'lightSection') {
+      setPortraitSection(false)
+      setStructureSection(false)
       setLightSection(!lightSection)
     }
   }
