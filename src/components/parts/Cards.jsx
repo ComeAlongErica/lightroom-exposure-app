@@ -52,17 +52,17 @@ margin: 0 10px 8px 10px;
 `
 
 const Cards = (props) => {
-  const { title, theme, description, changeDisplay, item, images } = props
+  const { title, theme, description, changeDisplay, item, images, value } = props
   return (
     <Card>
-      {!item && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
+      {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
         <CardTitle theme={theme}>{title}</CardTitle>
           <div>
             <p className={'description'}>{description}</p>
             <i className="fas fa-long-arrow-alt-right"></i>
           </div>
         </div>}
-        {item && <CardImgSelector images={images} />}
+        {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} />}
     </Card >
   )
 }

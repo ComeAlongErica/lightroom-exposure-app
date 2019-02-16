@@ -30,12 +30,12 @@ const StyledImg = styled.img`
 
 
 const CardImgSelector = (props) => {
-  const { images } = props
+  const { images, changeDisplay, item } = props
   console.log(images)
 
   return (
     <ImgSelector>
-      <i className="fas fa-long-arrow-alt-left"></i>
+      <i className="fas fa-long-arrow-alt-left" onClick={() => changeDisplay(item)}></i>
       {images.map((img, index) => (
         <Fragment key={index}>
           <StyledImg src={require('../../images/people/blue-person.jpg')} />
