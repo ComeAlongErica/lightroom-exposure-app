@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 
 const EditorContainer = styled.div`
@@ -10,7 +10,7 @@ margin: 15px;
 `
 const SingleImg = styled.img`
   width: 70%;
-  max-width: 600px;
+  max-width: 700px;
   height: auto;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   transition: transform .5s ease-out;
@@ -30,7 +30,7 @@ const EditorView = props => {
       <SingleImg src={showPicture.portraitSection} />
       <DoubleExposure src={showPicture.structureSection} />
       <DoubleExposure src={showPicture.lightSection} />
-    </EditorContainer >
+    </EditorContainer>
   )
 }
 
