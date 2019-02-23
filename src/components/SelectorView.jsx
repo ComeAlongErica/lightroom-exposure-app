@@ -9,8 +9,15 @@ display: flex;
 flex-direction: column;
 background-color: #1d0c26;
 height: 95vh;
-min-width: 65px;
-margin: 0px;
+min-width: 70px;
+width: 440px;
+margin: 20px 10px 20px 0;
+transition: .8s ease;
+&&.moveElement {
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+}
 .cardContainer {
   flex-grow: 1;
   display: flex;
@@ -109,14 +116,18 @@ const SelectorView = props => {
     }
   ]
 
+  let moveElement = !closeSelector ? '' : 'moveElement'
+  let fadeOut = !closeSelector ? '' : 'fadeElement'
+
   return (
-    <SelectorContainer>
+    <SelectorContainer className={moveElement}>
       <CloseX onClick={() => toggleCloseSelector()} />
       {!closeSelector && <Fragment>
         <Title>Editor</Title>
         <div className={'cardContainer'}>
           {editorCards.map((selector, index) => (
-            <Cards
+            <Cards 
+              className={fadeOut}
               key={index}
               theme={{ main: selector.theme }}
               title={selector.title}

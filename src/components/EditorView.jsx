@@ -6,7 +6,7 @@ flex-grow: 1;
 position: relative;
 background-color: #1d0c26;
 height: 95vh;
-margin: 15px;
+margin: 20px;
 `
 const SingleImg = styled.img`
   width: 70%;

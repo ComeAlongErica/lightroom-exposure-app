@@ -19,7 +19,6 @@ import texture3 from '../images/texture/sparkle.jpg'
 const Body = styled.div`
 display: flex;
 justify-content: center;
-align-items: center;
 background-color: #25132f;
 height: 100vh;
 width: 100vw;
