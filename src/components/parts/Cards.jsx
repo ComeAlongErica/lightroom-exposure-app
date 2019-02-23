@@ -13,7 +13,7 @@ background-image: linear-gradient(-240deg, #332d49, #311439);
 margin: 10px;
 border-radius: 10px;
 box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+transition: 0.5s ease;
 :hover {
   transform: scale(1.05);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -54,6 +54,7 @@ margin: 0 10px 8px 10px;
 
 const Cards = (props) => {
   const { title, theme, description, changeDisplay, item, images, value, setPersonImage } = props
+
   return (
     <Card>
       {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>

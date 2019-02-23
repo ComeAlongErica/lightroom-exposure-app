@@ -117,7 +117,6 @@ const SelectorView = props => {
   ]
 
   let moveElement = !closeSelector ? '' : 'moveElement'
-  let fadeOut = !closeSelector ? '' : 'fadeElement'
 
   return (
     <SelectorContainer className={moveElement}>
@@ -127,7 +126,6 @@ const SelectorView = props => {
         <div className={'cardContainer'}>
           {editorCards.map((selector, index) => (
             <Cards 
-              className={fadeOut}
               key={index}
               theme={{ main: selector.theme }}
               title={selector.title}
@@ -136,9 +134,11 @@ const SelectorView = props => {
               changeDisplay={toggleSectionDisplay}
               images={selector.images}
               value={selector.value}
-              setPersonImage={setPersonImage} />
+              setPersonImage={setPersonImage}
+              closeSelector={closeSelector} />
           ))}
-        </div></Fragment>
+        </div>
+        </Fragment>
       }
     </SelectorContainer >
   )
