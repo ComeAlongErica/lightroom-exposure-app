@@ -12,11 +12,12 @@ height: 95vh;
 min-width: 70px;
 width: 440px;
 margin: 20px 10px 20px 0;
-transition: .8s ease;
+transition: .3s ease;
 &&.moveElement {
   width: 70px;
   height: 70px;
   border-radius: 50px;
+  margin: 15px;
 }
 .cardContainer {
   flex-grow: 1;
@@ -28,34 +29,50 @@ transition: .8s ease;
 }
 `
 
-const CloseX = styled.div`
+const MenuButton = styled.div`
   position: absolute;
   margin: 20px;
   right: 0;
   top: 0;
-  width: 32px;
-  height: 32px;
-  opacity: 0.3;
-  transition: 0.5s ease-out;
+  width: 22px;
+  height: 22px;
 :hover {
   cursor: pointer;
-  opacity: 1;
+  opacity: .5;
 }
-:before, :after {
+`
+const MenuIcon = styled.div`
   position: absolute;
-  left: 15px;
-  content: '';
   height: 33px;
   width: 2px;
   background-color: white;
-}
-:before {
-  transform: rotate(45deg);
-}
-:after {
-  transform: rotate(-45deg);
+  transition: .5s;
+  left: 50%;
+  &&.rotateTopMenuIcon {
+    transform: rotate(90deg) translateX(50%) translateY(5px) scale(.8);
+    top: -50%;
+
+    :after {
+      position: absolute;
+      left: 12px;
+      content: '';
+      height: 33px;
+      width: 2px;
+      background-color: white;
+    }
+      }
+  &&.rotateBottomMenuIcon {
+    transform: rotate(90deg) translateX(-50%) translateY(5px) scale(.8);
+    top: 50%;
 }
 `
+const TopLineMenuIcon = styled(MenuIcon)`
+  transform: rotate(45deg);
+`
+const BottomLineMenuIcon = styled(MenuIcon)`
+  transform: rotate(-45deg);
+`
+
 
 const Title = styled.h1`
 font-size: 36px;
@@ -117,15 +134,21 @@ const SelectorView = props => {
   ]
 
   let moveElement = !closeSelector ? '' : 'moveElement'
+  let rotateTopMenuIcon = !closeSelector ? '' : 'rotateTopMenuIcon'
+  let rotateBottomMenuIcon = !closeSelector ? '' : 'rotateBottomMenuIcon'
+
 
   return (
     <SelectorContainer className={moveElement}>
-      <CloseX onClick={() => toggleCloseSelector()} />
+      <MenuButton onClick={() => toggleCloseSelector()}>
+        <TopLineMenuIcon className={rotateTopMenuIcon} />
+        <BottomLineMenuIcon className={rotateBottomMenuIcon} />
+      </MenuButton>
       {!closeSelector && <Fragment>
         <Title>Editor</Title>
         <div className={'cardContainer'}>
           {editorCards.map((selector, index) => (
-            <Cards 
+            <Cards
               key={index}
               theme={{ main: selector.theme }}
               title={selector.title}
@@ -138,7 +161,7 @@ const SelectorView = props => {
               closeSelector={closeSelector} />
           ))}
         </div>
-        </Fragment>
+      </Fragment>
       }
     </SelectorContainer >
   )
