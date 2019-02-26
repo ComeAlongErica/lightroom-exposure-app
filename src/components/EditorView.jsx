@@ -12,8 +12,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 .card-container {
-  width: 550px;
-  height: 590px;
+  width: 500px;
+  height: 560px;
   position: relative;
 }
 `
@@ -23,13 +23,14 @@ const SingleImg = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 500px;
   height: auto;
-  border: 20px solid white;
-  border-bottom: 75px solid white;
-  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border: 20px solid #ece9e6;
+  border-bottom: 80px solid #ece9e6;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  transition: box-shadow .8s ease;
   :hover {
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 1);
   }
 `
 const DoubleExposure = styled(SingleImg)`
