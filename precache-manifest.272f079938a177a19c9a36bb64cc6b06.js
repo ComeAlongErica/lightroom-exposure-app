@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/lightroom-exposure-app/static/media/structure1.af010f95.jpg"
   },
   {
-    "revision": "8aacd4476137fd14bda3",
+    "revision": "f090e8cef4777e8aa0db",
     "url": "/lightroom-exposure-app/static/css/main.cf0d866a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/lightroom-exposure-app/static/js/runtime~main.5bafeb3d.js"
   },
   {
-    "revision": "bdb491de3f39b7150b43",
-    "url": "/lightroom-exposure-app/static/js/2.bdb491de.chunk.js"
+    "revision": "cda2df04ab58306b0b3d",
+    "url": "/lightroom-exposure-app/static/js/2.cda2df04.chunk.js"
   },
   {
     "revision": "5d4970b88716cc244e4b6a1489da01d7",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/lightroom-exposure-app/static/media/person3.7a1a90db.jpg"
   },
   {
-    "revision": "8aacd4476137fd14bda3",
-    "url": "/lightroom-exposure-app/static/js/main.8aacd447.chunk.js"
+    "revision": "f090e8cef4777e8aa0db",
+    "url": "/lightroom-exposure-app/static/js/main.f090e8ce.chunk.js"
   },
   {
     "revision": "a3bfd2fcd3325fad5bf685a516247478",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/lightroom-exposure-app/static/media/sparkle.c3ef943e.jpg"
   },
   {
-    "revision": "0b367be9127650d98416739e971fc226",
+    "revision": "6d330aedc39b54075d104dda4d456822",
     "url": "/lightroom-exposure-app/index.html"
   }
 ];
