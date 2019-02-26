@@ -1,5 +1,5 @@
 ## Exposure App
-A photo editing app created using React, styled-components, and css blend modes. This will just be a small passion project I'll be updating over time as I learn new things in React.
+A photo editing app created using React, styled-components, and css blend modes. This is a small passion project I'll be updating over time as I learn new things in React or when I want to experiment with something new.
 
 ## Available Scripts
 
