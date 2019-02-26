@@ -23,7 +23,7 @@ const SingleImg = styled.img`
   left: 0;
   width: 550px;
   height: auto;
-  border: 5px solid white;
+  border: 8px solid white;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   :hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
@@ -38,6 +38,10 @@ const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg)
 const EditorView = props => {
   const { showPicture } = props
   const [items, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
+  let portraitShow = showPicture.portraitSection.length === 0 ? false : true
+  let structureShow = showPicture.structureSection.length === 0 ? false : true
+  let lightShow = showPicture.lightSection.length === 0 ? false : true
+
   return (
     <EditorContainer>
       <section className={'card-container'}>
@@ -47,9 +51,9 @@ const EditorView = props => {
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={{ transform: items.xys.interpolate(trans) }}
         >
-          <SingleImg src={showPicture.portraitSection} />
-          <DoubleExposure src={showPicture.structureSection} />
-          <DoubleExposure src={showPicture.lightSection} />
+          {portraitShow && <SingleImg src={showPicture.portraitSection} />}
+          {structureShow && <DoubleExposure src={showPicture.structureSection} />}
+          {lightShow && <DoubleExposure src={showPicture.lightSection} />}
         </animated.div>
       </section>
     </EditorContainer>
