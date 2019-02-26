@@ -13,17 +13,20 @@ justify-content: center;
 align-items: center;
 .card-container {
   width: 550px;
-  height: 550px;
+  height: 590px;
   position: relative;
 }
 `
 const SingleImg = styled.img`
+  border-radius: 3px;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
-  width: 550px;
+  width: 100%;
   height: auto;
-  border: 8px solid white;
+  border: 20px solid white;
+  border-bottom: 75px solid white;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   :hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
