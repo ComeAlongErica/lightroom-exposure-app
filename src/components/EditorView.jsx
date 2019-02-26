@@ -36,7 +36,7 @@ const DoubleExposure = styled(SingleImg)`
   mix-blend-mode: screen;
 `
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 150, (x - window.innerWidth / 2) / 40, 1.025]
-const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+const trans = (x, y, s) => `perspective(1500px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 const EditorView = props => {
   const { showPicture } = props
