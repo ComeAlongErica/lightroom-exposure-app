@@ -32,6 +32,13 @@ const StyledImg = styled.img`
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
   }
+  @media only screen and (max-width: 1024px) {
+    height: 50px;
+    width: 50px;
+    :hover {
+    transform: scale(1.5);
+    }
+  }
 `
 
 

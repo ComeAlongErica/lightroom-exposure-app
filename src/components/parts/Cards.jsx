@@ -49,7 +49,6 @@ i.fa-long-arrow-alt-right {
   }
   .description {
     font-size: 12px;
-    orphans: 2;
   }
   .description-container {
     font-size: 12px;

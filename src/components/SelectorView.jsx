@@ -20,7 +20,6 @@ transition: .3s ease;
   margin: 15px;
 }
 .cardContainer {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,8 +27,8 @@ transition: .3s ease;
   height: 100%;
 }
 @media only screen and (max-width: 1024px) {
-  width: auto;
-  height: auto;
+  width: calc(100% - 40px);
+  height: 400px;
   margin: auto 20px;
   .cardContainer{
     flex-direction: row;
