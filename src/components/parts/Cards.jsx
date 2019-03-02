@@ -26,15 +26,8 @@ transition: 0.5s ease;
     cursor: pointer;
   }
 }
-@media only screen and (max-width: 1024px) {
-  &&.card {
-    width: 30%;
-    height: auto;
-    min-width: 150px;
-}
-}
 .description {
-  display: inline;
+  /* display: inline; */
   font-size: 18px;
   margin: 10px;
   color: #9f9ba8;
@@ -43,10 +36,26 @@ i.fa-long-arrow-alt-right {
   color: #9f9ba8;
   font-size: 16px;
   transition: transform .5s ease-out;
+  margin-left: 10px;
 }
 :hover .fa-long-arrow-alt-right {
     transform: translateX(10px) scale(1.2);
   }
+  @media only screen and (max-width: 1024px) {
+  &&.card {
+    width: 30%;
+    height: 150px;
+    min-width: 150px;
+  }
+  .description {
+    font-size: 12px;
+    orphans: 2;
+  }
+  .description-container {
+    font-size: 12px;
+    height: auto;
+  }
+}
 `
 
 const CardTitle = styled.h2`
@@ -57,6 +66,9 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 font-size: 40px;
 margin: 0 10px 8px 10px;
+@media only screen and (max-width: 1024px) {
+  font-size: 30px;
+}
 `
 
 const Cards = (props) => {
@@ -66,9 +78,10 @@ const Cards = (props) => {
     <Card className={'card'}>
       {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
         <CardTitle theme={theme}>{title}</CardTitle>
-        <div>
-          <p className={'description'}>{description}</p>
+        <div className={'description-container'}>
+          <p className={'description'}>{description}
           <i className="fas fa-long-arrow-alt-right"></i>
+          </p>
         </div>
       </div>}
       {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} setPersonImage={setPersonImage} />}

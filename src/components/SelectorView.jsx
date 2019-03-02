@@ -28,13 +28,13 @@ transition: .3s ease;
   height: 100%;
 }
 @media only screen and (max-width: 1024px) {
-  flex-grow: 1;
   width: auto;
   height: auto;
-  margin: 20px;
+  margin: auto 20px;
   .cardContainer{
     flex-direction: row;
-    width: 100%;
+    width: auto;
+    height: 300px;
   }
 }
 `
@@ -120,7 +120,7 @@ const SelectorView = props => {
     {
       title: 'Choose a Portrait',
       theme: 'linear-gradient(to right, #f750a2, #ff7c7e, #ff7c7e)',
-      description: 'Select the main portrait to edit',
+      description: 'Select the portrait to edit',
       item: 'portraitSection',
       value: portraitSection,
       images: images.person
