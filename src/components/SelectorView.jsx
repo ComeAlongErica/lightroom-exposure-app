@@ -58,6 +58,11 @@ const MenuButton = styled.div`
   cursor: pointer;
   opacity: .5;
 }
+@media only screen and (max-width: 1024px) {
+  &&.menuButton {
+    margin: 16px 19px;
+  }
+}
 `
 const MenuIcon = styled.div`
   position: absolute;
@@ -82,7 +87,7 @@ const MenuIcon = styled.div`
   &&.rotateBottomMenuIcon {
     transform: rotate(90deg) translateX(-50%) translateY(5px) scale(.8);
     top: 50%;
-}
+    }
 `
 const TopLineMenuIcon = styled(MenuIcon)`
   transform: rotate(45deg);
@@ -158,7 +163,7 @@ const SelectorView = props => {
 
   return (
     <SelectorContainer className={moveElement}>
-      <MenuButton onClick={() => toggleCloseSelector()}>
+      <MenuButton onClick={() => toggleCloseSelector()} className={'menuButton'} >
         <TopLineMenuIcon className={rotateTopMenuIcon} />
         <BottomLineMenuIcon className={rotateBottomMenuIcon} />
       </MenuButton>
