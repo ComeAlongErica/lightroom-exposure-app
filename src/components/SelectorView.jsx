@@ -36,6 +36,15 @@ transition: .3s ease;
     height: 300px;
   }
 }
+@media only screen and (max-width: 414px) {
+  height: auto;
+  .cardContainer{
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+}
+
 `
 
 const MenuButton = styled.div`

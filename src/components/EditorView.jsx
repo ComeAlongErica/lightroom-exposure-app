@@ -11,11 +11,17 @@ margin: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
-.card-container {
+.edited-container {
   width: 500px;
   height: 560px;
   position: relative;
 }
+@media only screen and (max-width: 414px) {
+  .edited-container {
+    width: 300px;
+    height: 357px;
+}  }
+
 `
 const SingleImg = styled.img`
   border-radius: 3px;
@@ -31,6 +37,11 @@ const SingleImg = styled.img`
   transition: box-shadow .8s ease;
   :hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 1);
+  }
+  @media only screen and (max-width: 414px) {
+    width: 300px;
+    border: 13px solid #ece9e6;
+    border-bottom: 60px solid #ece9e6;
   }
 `
 const DoubleExposure = styled(SingleImg)`
@@ -48,7 +59,7 @@ const EditorView = props => {
 
   return (
     <EditorContainer>
-      <section className={'card-container'}>
+      <section className={'edited-container'}>
         <animated.div
           class="card"
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}

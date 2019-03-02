@@ -20,6 +20,9 @@ i.fa-long-arrow-alt-left {
     cursor: pointer;
   }
 }
+@media only screen and (max-width: 414px) {
+  justify-content: center;
+}
 `
 const StyledImg = styled.img`
   width: 115px;
@@ -38,6 +41,9 @@ const StyledImg = styled.img`
     :hover {
     transform: scale(1.5);
     }
+  }
+  @media only screen and (max-width: 414px) {
+  margin: 5px;
   }
 `
 

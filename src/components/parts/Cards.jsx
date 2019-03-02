@@ -27,7 +27,6 @@ transition: 0.5s ease;
   }
 }
 .description {
-  /* display: inline; */
   font-size: 18px;
   margin: 10px;
   color: #9f9ba8;
@@ -51,10 +50,19 @@ i.fa-long-arrow-alt-right {
     font-size: 12px;
   }
   .description-container {
-    font-size: 12px;
     height: auto;
   }
 }
+@media only screen and (max-width: 414px) {
+  &&.card {
+    width: calc(100% - 20px);
+    height: 200px;
+  }
+  .description {
+    margin: 0 10px 20px 10px
+  }
+}
+
 `
 
 const CardTitle = styled.h2`
@@ -68,6 +76,10 @@ margin: 0 10px 8px 10px;
 @media only screen and (max-width: 1024px) {
   font-size: 30px;
 }
+@media only screen and (max-width: 414px) {
+  font-size: 25px;
+  margin: 20px 10px 0px 10px;
+}
 `
 
 const Cards = (props) => {
@@ -79,7 +91,7 @@ const Cards = (props) => {
         <CardTitle theme={theme}>{title}</CardTitle>
         <div className={'description-container'}>
           <p className={'description'}>{description}
-          <i className="fas fa-long-arrow-alt-right"></i>
+            <i className="fas fa-long-arrow-alt-right"></i>
           </p>
         </div>
       </div>}
