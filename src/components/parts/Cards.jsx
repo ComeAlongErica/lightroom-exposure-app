@@ -26,6 +26,13 @@ transition: 0.5s ease;
     cursor: pointer;
   }
 }
+@media only screen and (max-width: 1024px) {
+  &&.card {
+    width: 30%;
+    height: auto;
+    min-width: 150px;
+}
+}
 .description {
   display: inline;
   font-size: 18px;
@@ -56,15 +63,15 @@ const Cards = (props) => {
   const { title, theme, description, changeDisplay, item, images, value, setPersonImage } = props
 
   return (
-    <Card>
+    <Card className={'card'}>
       {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
         <CardTitle theme={theme}>{title}</CardTitle>
-          <div>
-            <p className={'description'}>{description}</p>
-            <i className="fas fa-long-arrow-alt-right"></i>
-          </div>
-        </div>}
-        {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} setPersonImage={setPersonImage} />}
+        <div>
+          <p className={'description'}>{description}</p>
+          <i className="fas fa-long-arrow-alt-right"></i>
+        </div>
+      </div>}
+      {value && <CardImgSelector changeDisplay={changeDisplay} images={images} item={item} setPersonImage={setPersonImage} />}
     </Card >
   )
 }

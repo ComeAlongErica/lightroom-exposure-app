@@ -22,6 +22,9 @@ justify-content: center;
 background-color: #25132f;
 height: 100vh;
 width: 100vw;
+@media only screen and (max-width: 1024px) {
+  flex-direction: column;
+}
 `
 
 const App = () => {

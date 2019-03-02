@@ -27,6 +27,16 @@ transition: .3s ease;
   padding: 10px;
   height: 100%;
 }
+@media only screen and (max-width: 1024px) {
+  flex-grow: 1;
+  width: auto;
+  height: auto;
+  margin: 20px;
+  .cardContainer{
+    flex-direction: row;
+    width: 100%;
+  }
+}
 `
 
 const MenuButton = styled.div`
