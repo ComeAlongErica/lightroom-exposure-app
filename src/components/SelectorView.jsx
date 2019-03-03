@@ -44,7 +44,6 @@ transition: .3s ease;
     height: auto;
   }
 }
-
 `
 
 const MenuButton = styled.div`
