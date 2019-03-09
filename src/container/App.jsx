@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, Fragment } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components'
 import { X } from 'react-feather'
-import { useTransition } from 'react-spring'
+import { useTransition, animated } from 'react-spring'
 
 import SelectorView from '../components/SelectorView'
 import EditorView from '../components/EditorView'
@@ -30,8 +30,59 @@ width: 100vw;
 `
 
 const Container = styled.div`
-width: 200px;
+z-index: 1000;
+width: 450px;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: 0px;
 `
+
+const Message = styled(animated.div)`
+box-sizing: border-box;
+position: relative;
+overflow: hidden;
+`
+
+const Content = styled.div`
+display: flex;
+overflow: hidden;
+justify-content: space-around;
+color: white;
+background: rgba(68, 81, 89, .4);
+opacity: 0.9;
+padding: 12px 22px;
+font-size: 1em;
+height: auto;
+border-radius: 3px;
+margin: 5px 0;
+`
+const Button = styled('button')`
+cursor: pointer;
+pointer-events: all;
+outline: 0;
+border: none;
+background: transparent;
+display: flex;
+align-self: flex-end;
+overflow: hidden;
+margin: 0;
+padding: 0;
+padding-bottom: 16px;
+color: rgba(255, 255, 255, 0.5);
+:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+`
+const Life = styled(animated.div)`
+position: absolute;
+bottom: 0;
+left: 0px;
+width: auto;
+background-image: linear-gradient(130deg, #00b4e6, #00f0e0);
+height: 5px;
+`
+
 let id = 0
 
 function MessageHub({ config = { tension: 125, friction: 20, precision: 0.1 }, timeout = 3000, children }) {
@@ -55,19 +106,19 @@ function MessageHub({ config = { tension: 125, friction: 20, precision: 0.1 }, t
   return (
     <Container>
       {transitions.map(({ key, item, props: { life, ...style } }) => (
-        <Fragment key={key} style={style}>
-          <div ref={ref => ref && refMap.set(item, ref)}>
-            <div style={{ right: life }} />
+        <Message key={key} style={style}>
+          <Content ref={ref => ref && refMap.set(item, ref)}>
+            <Life style={{ right: life }} />
             <p>{item.msg}</p>
-            <button
+            <Button
               onClick={e => {
                 e.stopPropagation()
                 cancelMap.has(item) && cancelMap.get(item)()
               }}>
               <X size={18} />
-            </button>
-          </div>
-        </Fragment>
+            </Button>
+          </Content>
+        </Message>
       ))}
     </Container>
   )
@@ -87,13 +138,9 @@ const App = () => {
 
   return (
     <Body>
-      <div onClick={messageClick}>
-      Click here to create notifications
-      </div>
-      <SelectorView images={images} setPersonImage={setPersonImage} />
+      <SelectorView images={images} setPersonImage={setPersonImage} messageClick={messageClick}/>
       <EditorView showPicture={showPicture} />
       <MessageHub children={add => (ref.current = add)} />
-
     </Body >
   )
 }

@@ -103,13 +103,16 @@ margin: 15px 20px 10px 20px;
 `
 
 const SelectorView = props => {
-  const { images, setPersonImage } = props
+  const { images, setPersonImage, messageClick } = props
   const [closeSelector, setCloseSelector] = useState(false);
   const [portraitSection, setPortraitSection] = useState(false);
   const [structureSection, setStructureSection] = useState(false);
   const [lightSection, setLightSection] = useState(false);
 
-  const toggleCloseSelector = () => setCloseSelector(!closeSelector)
+  const toggleCloseSelector = () => {
+    messageClick()
+    setCloseSelector(!closeSelector)
+  }
   const toggleSectionDisplay = (item) => {
     if (item === 'portraitSection') {
       setPortraitSection(!portraitSection)
