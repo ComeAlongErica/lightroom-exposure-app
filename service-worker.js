@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/lightroom-exposure-app/precache-manifest.a91c5659667cc3fcd471580f3a0acfdf.js"
+  "/lightroom-exposure-app/precache-manifest.cf1ec84dc94d2e03ecb0010bc7c28e2d.js"
 );
 
 workbox.clientsClaim();
