@@ -6,6 +6,7 @@ import CardImgSelector from './CardImgSelector'
 const Card = styled.div`
 min-width: 400px;
 height: 30%;
+min-height: 70px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -17,12 +18,7 @@ transition: 0.5s ease;
 :hover {
   transform: scale(1.05);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  .cardFront {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  .card-front {
     cursor: pointer;
   }
 }
@@ -38,7 +34,7 @@ i.fa-long-arrow-alt-right {
   margin-left: 10px;
 }
 :hover .fa-long-arrow-alt-right {
-    transform: translateX(10px) scale(1.2);
+    /* transform: translateX(10px) scale(1.2); */
   }
   @media only screen and (max-width: 1024px) {
   &&.card {
@@ -87,7 +83,7 @@ const Cards = (props) => {
 
   return (
     <Card className={'card'}>
-      {!value && <div className={'cardFront'} onClick={() => changeDisplay(item)}>
+      {!value && <div className={'card-front'} onClick={() => changeDisplay(item)}>
         <CardTitle theme={theme}>{title}</CardTitle>
         <div className={'description-container'}>
           <p className={'description'}>{description}
