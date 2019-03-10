@@ -34,7 +34,7 @@ i.fa-long-arrow-alt-right {
   margin-left: 10px;
 }
 :hover .fa-long-arrow-alt-right {
-    /* transform: translateX(10px) scale(1.2); */
+    transform: translateX(10px) scale(1.2);
   }
   @media only screen and (max-width: 1024px) {
   &&.card {
