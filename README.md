@@ -3,6 +3,7 @@ A photo editing app created using React, styled-components, and css blend modes.
 
 **Focus Points**
 - Use Hooks in React
+- Make my own animated hamburger menu (just something I've been wanting to do :P)
 - Experiment with CSS Blend Modes
 - Experiment with using styled-components
 - Experiment with an animation library (react-spring)
