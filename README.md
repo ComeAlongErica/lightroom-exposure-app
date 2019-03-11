@@ -6,6 +6,7 @@ A photo editing app created using React, styled-components, and css blend modes.
 - Make my own animated hamburger menu (just something I've been wanting to do :P)
 - Experiment with CSS Blend Modes
 - Experiment with using styled-components
+- Experiment with custom animations within React framework
 - Experiment with an animation library (react-spring)
 - Have fun and make something beautiful!
 
