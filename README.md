@@ -1,5 +1,5 @@
 ## Exposure App
-A faux photo editing app created using React, styled-components, and css blend modes. This is a small passion project I'll be updating over time as I learn new things in React or when I want to experiment with something new.
+A faux photo editing app created using React, styled-components, react-spring, and css blend modes. This is a small passion project I'll be updating over time as I learn new things in React or when I want to experiment with something new.
 
 **Focus Points**
 - Use Hooks in React
