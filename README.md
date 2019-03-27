@@ -1,5 +1,14 @@
 ## Exposure App
-A photo editing app created using React, styled-components, and css blend modes. This is a small passion project I'll be updating over time as I learn new things in React or when I want to experiment with something new.
+A faux photo editing app created using React, styled-components, and css blend modes. This is a small passion project I'll be updating over time as I learn new things in React or when I want to experiment with something new.
+
+**Focus Points**
+- Use Hooks in React
+- Make my own animated hamburger menu (just something I've been wanting to do :P)
+- Experiment with CSS Blend Modes
+- Experiment with using styled-components
+- Experiment with custom animations within React framework
+- Experiment with an animation library (react-spring)
+- Have fun and make something beautiful!
 
 ## Available Scripts
 
