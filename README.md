@@ -10,6 +10,8 @@ A faux photo editing app created using React, styled-components, and css blend m
 - Experiment with an animation library (react-spring)
 - Have fun and make something beautiful!
 
+![Lightroom Preview](images/lightroom-preview.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
