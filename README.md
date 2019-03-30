@@ -17,7 +17,7 @@ A faux photo editing app created using React, styled-components, react-spring, a
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.
