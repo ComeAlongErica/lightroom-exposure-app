@@ -8,6 +8,7 @@ A faux photo editing app created using React, styled-components, react-spring, a
 - Experiment with using styled-components
 - Experiment with custom animations within React framework
 - Experiment with an animation library (react-spring)
+- Create an alert using react-spring notification and timing gradient
 - Have fun and make something beautiful!
 
 ![Lightroom Preview](images/lightroom-preview.png)
